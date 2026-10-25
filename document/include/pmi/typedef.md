@@ -26,14 +26,14 @@ __GUARD_PMI_TYPEDEF_SVH__
 ## Description
 
 # pmi/typedef.svh 
-This file provides a collection of SystemVerilog macros designed to standardize the generation of packed structures for the PMI (Pipelined Memory Interface). By using these macros, developers can consistently define request and response interfaces with configurable address and data widths, ensuring architectural uniformity across the ADN-VLSI/adn_common project.
+This file provides a collection of SystemVerilog macros designed to standardize the generation of packed structures for the PMI (Pipelined Memory Interface). By using these macros, developers can consistently define request and response interfaces with configurable address and data widths, ensuring architectural uniformity across the adnsemicon/adn_common project.
 
 # pmi/typedef.svh  Case
 This file serves as a centralized library for generating standardized SystemVerilog packed structures. It is primarily used to:
 - Ensure architectural consistency across the PMI (Pipelined Memory Interface) by enforcing a uniform signal layout.
 - Reduce boilerplate code when defining request and response interfaces.
 - Provide flexibility through configurable parameters for address (`__AW__`) and data (`__DW__`) widths.
-- Facilitate rapid integration of master-slave communication channels in the `ADN-VLSI/adn_common` project.
+- Facilitate rapid integration of master-slave communication channels in the `adnsemicon/adn_common` project.
 
 | REVISION | DATE       | AUTHOR          | DESCRIPTION                                            |
 |----------|------------|-----------------|--------------------------------------------------------|

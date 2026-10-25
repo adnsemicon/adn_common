@@ -16,7 +16,7 @@ This module is primarily used in digital logic designs requiring state storage w
 | 1.1      | 2026-08-01 | Foez Ahmed      | Ratified                                               |
  
 Author : Shuparna Haque (sheikhshuparna3108@gmail.com)
-This file is part of https://github.com/ADN-VLSI/adn_common
+This file is part of https://github.com/adnsemicon/adn_common
 Copyright (c) 2026 ADN Semiconductors
 Licensed under the MIT License
 See LICENSE file in the project root for full license information

@@ -29,7 +29,7 @@
 | 0.2      | 2026-08-31 | Md Sakhawat Hossain Sabbir | Stable Version                    |
 | 0.3      | 2026-09-13 | Md Sakhawat Hossain Sabbir | Added coverage                    |
 Authors : Annim Jannat (jannatannim@gmail.com) , Md Sakhawat Hossain Sabbir (sabbirone939@gmail.com)
-This file is part of ADN-VLSI/adn_common
+This file is part of adnsemicon/adn_common
 Copyright (c) 2026 ADN Semiconductors
 Licensed under the MIT License
 See LICENSE file in the project root for full license information

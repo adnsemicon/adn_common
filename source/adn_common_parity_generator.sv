@@ -13,7 +13,7 @@ This module is intended for use in communication interfaces, bus protocols, and 
 | 1.1      | 2026-08-09 | Foez Ahmed          | Ratified                                           |
 
 Author : Ahasan Ullah Khalid (aukhalid02@gmail.com)
-This file is part of ADN-VLSI/adn_common
+This file is part of adnsemicon/adn_common
 Copyright (c) 2026 ADN Semiconductors
 Licensed under the MIT License
 See LICENSE file in the project root for full license information

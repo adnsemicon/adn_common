@@ -42,7 +42,7 @@ STCR := | sed "/For covergroup Instance 'test_report' of covergroup/d"
 O_EW :=  $(STCR) | (grep -iE "Error|Warning" --color=auto || true)
 H_EW :=  $(STCR) | (grep -iE "Error|Warning|" --color=auto)
 
-LINE_1 := This file is part of https://github.com/ADN-VLSI/$(REPO_FILE_EXT)
+LINE_1 := This file is part of https://github.com/adnsemicon/$(REPO_FILE_EXT)
 LINE_2 := Copyright (c) $(shell date +%Y) ADN Semiconductors
 LINE_3 := Licensed under the MIT License
 LINE_4 := See LICENSE file in the project root for full license information
@@ -266,7 +266,7 @@ update_doc_list:
 	@$(foreach file, $(shell find $(REPO_ROOT)/document/include -name "*.md" | sort), make -s get_source_doc_header FILE=$(file);)
 	@echo "" >> readme.md
 	@$(foreach file, $(shell find $(REPO_ROOT)/submodule/ -wholename "$(REPO_ROOT)/submodule/*/document/include/*/*.md" | sort), make -s get_source_doc_header FILE=$(file);)
-	@perl -pi -e 's|submodule/([^/]+)|https://github.com/ADN-VLSI/$$1/blob/main|g' readme.md
+	@perl -pi -e 's|submodule/([^/]+)|https://github.com/adnsemicon/$$1/blob/main|g' readme.md
 	@echo "" >> readme.md
 	@echo "---" >> readme.md
 	@echo "" >> readme.md
@@ -326,7 +326,7 @@ gen_assertion:
 		sed -i "s|__AUTHOR_NAME__|$$(git config user.name)|g" $(REPO_ROOT)/assertion/$(TOP).sv; \
 		sed -i "s|__AUTHOR_EMAIL__|$$(git config user.email)|g" $(REPO_ROOT)/assertion/$(TOP).sv; \
 		sed -i "s|YYYY-MM-DD|$$(date +%Y-%m-%d)|g" $(REPO_ROOT)/assertion/$(TOP).sv; \
-		sed -i "s|ADN-VLSI/__REPO_NAME__|ADN-VLSI/$(REPO_FILE_EXT)|g" $(REPO_ROOT)/assertion/$(TOP).sv; \
+		sed -i "s|adnsemicon/__REPO_NAME__|adnsemicon/$(REPO_FILE_EXT)|g" $(REPO_ROOT)/assertion/$(TOP).sv; \
 		sed -i "s|__YEAR__|$$(date +%Y)|g" $(REPO_ROOT)/assertion/$(TOP).sv; \
 		sed -i "s|source_model|$(TOP)|g" $(REPO_ROOT)/assertion/$(TOP).sv; \
 	fi
@@ -341,7 +341,7 @@ gen_interface:
 		sed -i "s|__AUTHOR_NAME__|$$(git config user.name)|g" $(REPO_ROOT)/interface/$(TOP).sv; \
 		sed -i "s|__AUTHOR_EMAIL__|$$(git config user.email)|g" $(REPO_ROOT)/interface/$(TOP).sv; \
 		sed -i "s|YYYY-MM-DD|$$(date +%Y-%m-%d)|g" $(REPO_ROOT)/interface/$(TOP).sv; \
-		sed -i "s|ADN-VLSI/__REPO_NAME__|ADN-VLSI/$(REPO_FILE_EXT)|g" $(REPO_ROOT)/interface/$(TOP).sv; \
+		sed -i "s|adnsemicon/__REPO_NAME__|adnsemicon/$(REPO_FILE_EXT)|g" $(REPO_ROOT)/interface/$(TOP).sv; \
 		sed -i "s|__YEAR__|$$(date +%Y)|g" $(REPO_ROOT)/interface/$(TOP).sv; \
 		sed -i "s|source_model|$(TOP)|g" $(REPO_ROOT)/interface/$(TOP).sv; \
 	fi
@@ -356,7 +356,7 @@ gen_source:
 		sed -i "s|__AUTHOR_NAME__|$$(git config user.name)|g" $(REPO_ROOT)/source/$(TOP).sv; \
 		sed -i "s|__AUTHOR_EMAIL__|$$(git config user.email)|g" $(REPO_ROOT)/source/$(TOP).sv; \
 		sed -i "s|YYYY-MM-DD|$$(date +%Y-%m-%d)|g" $(REPO_ROOT)/source/$(TOP).sv; \
-		sed -i "s|ADN-VLSI/__REPO_NAME__|ADN-VLSI/$(REPO_FILE_EXT)|g" $(REPO_ROOT)/source/$(TOP).sv; \
+		sed -i "s|adnsemicon/__REPO_NAME__|adnsemicon/$(REPO_FILE_EXT)|g" $(REPO_ROOT)/source/$(TOP).sv; \
 		sed -i "s|__YEAR__|$$(date +%Y)|g" $(REPO_ROOT)/source/$(TOP).sv; \
 		sed -i "s|source_model|$(TOP)|g" $(REPO_ROOT)/source/$(TOP).sv; \
 	fi
@@ -371,7 +371,7 @@ gen_testbench:
 		sed -i "s|__AUTHOR_NAME__|$$(git config user.name)|g" $(REPO_ROOT)/testbench/$(TOP).sv; \
 		sed -i "s|__AUTHOR_EMAIL__|$$(git config user.email)|g" $(REPO_ROOT)/testbench/$(TOP).sv; \
 		sed -i "s|YYYY-MM-DD|$$(date +%Y-%m-%d)|g" $(REPO_ROOT)/testbench/$(TOP).sv; \
-		sed -i "s|ADN-VLSI/__REPO_NAME__|ADN-VLSI/$(REPO_FILE_EXT)|g" $(REPO_ROOT)/testbench/$(TOP).sv; \
+		sed -i "s|adnsemicon/__REPO_NAME__|adnsemicon/$(REPO_FILE_EXT)|g" $(REPO_ROOT)/testbench/$(TOP).sv; \
 		sed -i "s|__YEAR__|$$(date +%Y)|g" $(REPO_ROOT)/testbench/$(TOP).sv; \
 		sed -i "s|testbench_model|$(TOP)|g" $(REPO_ROOT)/testbench/$(TOP).sv; \
 	fi

@@ -12,7 +12,7 @@ To use this module, instantiate it by specifying the `ADDR_WIDTH`, `SLAVE_ID_WID
 | 1.1      | 2026-09-14 | Foez Ahmed         | New ports (addr_o, addr_valid_o) added in FP ARB    |
 
 Author : Adnan Sami Anirban (adnananirban259@gmail.com)
-This file is part of ADN-VLSI/adn_common
+This file is part of adnsemicon/adn_common
 Copyright (c) 2026 ADN Semiconductors
 Licensed under the MIT License
 See LICENSE file in the project root for full license information

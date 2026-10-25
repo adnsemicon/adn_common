@@ -1,14 +1,14 @@
 /*
 
 # Purpose
-This file provides a collection of SystemVerilog macros designed to standardize the generation of packed structures for the PMI (Pipelined Memory Interface). By using these macros, developers can consistently define request and response interfaces with configurable address and data widths, ensuring architectural uniformity across the ADN-VLSI/adn_common project.
+This file provides a collection of SystemVerilog macros designed to standardize the generation of packed structures for the PMI (Pipelined Memory Interface). By using these macros, developers can consistently define request and response interfaces with configurable address and data widths, ensuring architectural uniformity across the adnsemicon/adn_common project.
 
 # Use Case
 This file serves as a centralized library for generating standardized SystemVerilog packed structures. It is primarily used to:
 - Ensure architectural consistency across the PMI (Pipelined Memory Interface) by enforcing a uniform signal layout.
 - Reduce boilerplate code when defining request and response interfaces.
 - Provide flexibility through configurable parameters for address (`__AW__`) and data (`__DW__`) widths.
-- Facilitate rapid integration of master-slave communication channels in the `ADN-VLSI/adn_common` project.
+- Facilitate rapid integration of master-slave communication channels in the `adnsemicon/adn_common` project.
 
 | REVISION | DATE       | AUTHOR          | DESCRIPTION                                            |
 |----------|------------|-----------------|--------------------------------------------------------|
@@ -16,8 +16,8 @@ This file serves as a centralized library for generating standardized SystemVeri
 | 1.0      | 2026-08-04 | Foez Ahmed      | Stable release                                         |
 
 Author : Foez Ahmed (foez.official@gmail.com)
-This file is part of ADN-VLSI/adn_common
-Copyright (c) 2026 ADN-VLSI
+This file is part of adnsemicon/adn_common
+Copyright (c) 2026 adnsemicon
 Licensed under the MIT License
 See LICENSE file in the project root for full license information
 

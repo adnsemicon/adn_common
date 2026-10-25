@@ -14,7 +14,7 @@ The `adn_common_cdc_fifo` is primarily used in digital systems where data must b
 | 1.2      | 2026-08-19 | Ahasan Ullah Khalid | Stable release                                     |
 
 Author : Ahasan Ullah Khalid (aukhalid02@gmail.com)
-This file is part of ADN-VLSI/adn_common
+This file is part of adnsemicon/adn_common
 Copyright (c) 2026 ADN Semiconductors
 Licensed under the MIT License
 See LICENSE file in the project root for full license information

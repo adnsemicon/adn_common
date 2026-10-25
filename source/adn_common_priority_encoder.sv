@@ -14,7 +14,7 @@ This module is primarily used in arbitration logic, interrupt controllers, and r
 | 1.2      | 2026-08-01 | Foez Ahmed         | Ratified                                            |
 
 Author : Shykul Islam Siam (shykulislam32@gmail.com)
-This file is part of ADN-VLSI/adn_common
+This file is part of adnsemicon/adn_common
 Copyright (c) 2026 ADN Semiconductors
 Licensed under the MIT License
 See LICENSE file in the project root for full license information

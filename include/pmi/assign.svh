@@ -11,8 +11,8 @@ This file is primarily used in testbenches or top-level integration modules wher
 | 0.1      | 2026-08-04 | Foez Ahmed      | Initial version                                        |
 
 Author : Foez Ahmed (foez.official@gmail.com)
-This file is part of ADN-VLSI/adn_common
-Copyright (c) 2026 ADN-VLSI
+This file is part of adnsemicon/adn_common
+Copyright (c) 2026 adnsemicon
 Licensed under the MIT License
 See LICENSE file in the project root for full license information
 

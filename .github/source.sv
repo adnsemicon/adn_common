@@ -10,7 +10,7 @@
 | 1.0      | YYYY-MM-DD | __AUTHOR_NAME__ | Stable release                                         |
 
 Author : __AUTHOR_NAME__ (__AUTHOR_EMAIL__)
-This file is part of ADN-VLSI/__REPO_NAME__
+This file is part of adnsemicon/__REPO_NAME__
 Copyright (c) __YEAR__ ADN Semiconductors
 Licensed under the MIT License
 See LICENSE file in the project root for full license information

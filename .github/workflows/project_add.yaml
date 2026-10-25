@@ -1,4 +1,4 @@
-name: Add Issue to ADN-VLSI Project
+name: Add Issue to adnsemicon Project
 
 on:
   issues:
@@ -18,7 +18,7 @@ jobs:
         run: |
           PROJECT_ID=$(gh api graphql -f query='
           {
-            organization(login:"ADN-VLSI") {
+            organization(login:"adnsemicon") {
               projectV2(number:2) {
                 id
               }

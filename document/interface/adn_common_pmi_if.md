@@ -27,7 +27,7 @@
 ## Description
 
 ### Purpose
-The `adn_common_pmi_if` interface provides a standardized, transaction-level communication protocol for memory-mapped interactions within the ADN-VLSI ecosystem. It abstracts the underlying signal handshaking between masters and slaves, facilitating modular verification and design reuse through parameterized request and response structures.
+The `adn_common_pmi_if` interface provides a standardized, transaction-level communication protocol for memory-mapped interactions within the adnsemicon ecosystem. It abstracts the underlying signal handshaking between masters and slaves, facilitating modular verification and design reuse through parameterized request and response structures.
 
 ### Use Case
 This interface is primarily used to decouple the physical signal-level implementation of memory-mapped buses from the verification components (like UVM drivers/monitors) and RTL modules. By utilizing `msend`, `mrecv`, `ssend`, and `srecv` tasks, users can perform high-level read/write transactions without manually managing clock-cycle-accurate handshaking signals. It is ideal for:

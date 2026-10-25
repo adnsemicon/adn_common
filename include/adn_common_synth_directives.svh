@@ -22,7 +22,7 @@ without unwanted optimizations or ungrouping of module boundaries.
 | 1.1      | 2026-08-01 | Foez Ahmed      | Ratified                                               |
 
 Author : Foez Ahmed (foez.official@gmail.com)
-This file is part of https://github.com/ADN-VLSI/adn_common
+This file is part of https://github.com/adnsemicon/adn_common
 Copyright (c) 2026 ADN Semiconductors
 Licensed under the MIT License
 See LICENSE file in the project root for full license information
