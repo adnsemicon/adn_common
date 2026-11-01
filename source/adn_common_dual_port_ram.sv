@@ -44,33 +44,21 @@ module adn_common_dual_port_ram #(
   // SIGNALS
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
-`ifdef SIMULATION
-  logic [DATA_WIDTH-1:0] mem_core[longint];
-`else
   // Dual-Port memory matrix array: The physical storage element
   logic [DATA_WIDTH-1:0] mem_core[2**ADDR_WIDTH];
-`endif
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
   // SEQUENTIALS
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
-`ifdef SIMULATION
-  always @(posedge clk_i iff wr_en_i) mem_core[wr_addr_i] = #1step wr_data_i;
-`else
   // Synchronous Write Channel (wr_clk_i Domain): Handles data storage into the memory array
   always_ff @(posedge clk_i iff wr_en_i) mem_core[wr_addr_i] <= wr_data_i;
-`endif
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
   // ASSIGNMENTS
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
-`ifdef SIMULATION
-  always @(clk_i or rd_addr_i) rd_data_o <= mem_core[rd_addr_i];
-`else
   // Asynchronous Read Channel: Instantly reflects changes on rd_addr_i when rd_en_i is high
   always_comb rd_data_o = mem_core[rd_addr_i];
-`endif
 
 endmodule
