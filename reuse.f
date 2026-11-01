@@ -17,9 +17,9 @@ ${ADN_COMMON}/source/adn_common_hs_combiner.sv
 ${ADN_COMMON}/source/adn_common_hs_counter.sv
 ${ADN_COMMON}/source/adn_common_jk_ff.sv
 ${ADN_COMMON}/source/adn_common_parity_generator.sv
+${ADN_COMMON}/source/adn_common_pipeline.sv
 ${ADN_COMMON}/source/adn_common_pipeline_join.sv
 ${ADN_COMMON}/source/adn_common_pipeline_split.sv
-${ADN_COMMON}/source/adn_common_pipeline.sv
 ${ADN_COMMON}/source/adn_common_pmi_mem.sv
 ${ADN_COMMON}/source/adn_common_pmi_width_converter_down.sv
 ${ADN_COMMON}/source/adn_common_pmi_width_converter_top.sv
