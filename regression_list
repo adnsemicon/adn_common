@@ -1,8 +1,8 @@
 ci_simulate adn_common_address_decoder_tb TC_ALL 1000
 ci_simulate adn_common_bin_gray_tb TC_ALL 1000
-# ci_simulate adn_common_cdc_fifo_tb TC_ALL 1000 # FIX THIS
+ci_simulate adn_common_cdc_fifo_tb TC_ALL 1000
 ci_simulate adn_common_decoder_tb TC_ALL 1000
-# ci_simulate adn_common_dual_port_ram_tb TC_ALL 100 # FIX THIS
+ci_simulate adn_common_dual_port_ram_tb TC_ALL 100
 ci_simulate adn_common_hs_combiner_tb TC_ALL 100
 ci_simulate adn_common_parity_generator_tb TC_ALL 0
 ci_simulate adn_common_pipeline_join_tb TC_ALL 1000 
