@@ -29,6 +29,15 @@
 
 ## Description
 
+### Ports
+
+| Name     | Direction | Description                           |
+|----------|-----------|---------------------------------------|
+| arst_n   | output    | Active-low asynchronous reset signal  |
+| arst     | output    | Active-high asynchronous reset signal |
+| clk      | output    | Generated primary clock signal        |
+| clk_n    | output    | Inverted / complementary clock signal |
+
 ### Purpose
 The `adn_common_clock_reset_if` interface provides a comprehensive, configurable SystemVerilog
 simulation model and Bus Functional Model (BFM) for generating clock and reset signals. It
