@@ -45,6 +45,7 @@ This Repo is a collection of common modules used in ADN designs. The modules are
 
 
 ## INTERFACE
+[`adn_common_clock_reset_if`](document/interface/adn_common_clock_reset_if.md)
 [`adn_common_pmi_if`](document/interface/adn_common_pmi_if.md)
 
 

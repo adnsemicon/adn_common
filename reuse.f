@@ -2,6 +2,7 @@ ${ADN_COMMON}/assertion/adn_common_pipeline_assertion.sv
 ${ADN_COMMON}/assertion/adn_common_pipeline_join_assertion.sv
 ${ADN_COMMON}/assertion/adn_common_pipeline_split_assertion.sv
 ${ADN_COMMON}/assertion/adn_common_valid_ready_checker.sv
+${ADN_COMMON}/interface/adn_common_clock_reset_if.sv
 ${ADN_COMMON}/interface/adn_common_pmi_if.sv
 ${ADN_COMMON}/source/adn_common_address_decoder.sv
 ${ADN_COMMON}/source/adn_common_bin_to_gray.sv
