@@ -139,7 +139,14 @@ interface adn_common_clock_reset_if #(
       input arst_n,
       input arst,
       input clk_cycle_count,
-      input is_aligned
+      input is_aligned,
+      import wait_cycles,
+      import wait_negedge_cycles,
+      import wait_for_reset_done,
+      import get_frequency,
+      import get_period,
+      import get_duty_cycle,
+      import is_reset_asserted
   );
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
