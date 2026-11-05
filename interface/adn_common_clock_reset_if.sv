@@ -1,5 +1,14 @@
 /*
 
+### Ports
+
+| Name     | Direction | Description                           |
+|----------|-----------|---------------------------------------|
+| arst_n   | output    | Active-low asynchronous reset signal  |
+| arst     | output    | Active-high asynchronous reset signal |
+| clk      | output    | Generated primary clock signal        |
+| clk_n    | output    | Inverted / complementary clock signal |
+
 ### Purpose
 The `adn_common_clock_reset_if` interface provides a comprehensive, configurable SystemVerilog
 simulation model and Bus Functional Model (BFM) for generating clock and reset signals. It
@@ -28,22 +37,41 @@ See LICENSE file in the project root for full license information
 
 interface adn_common_clock_reset_if #(
 
+    //////////////////////////////////////////////
     // Reset parameters
-    parameter bit RST_ACTIVE_LOW = 1'b1,  // 1: Active-low reset; 0: Active-high
-    parameter bit RST_START_ASSERTED = 1'b0,  // 1: Starts asserted at time 0
-    parameter realtime RST_PRE_DURATION = 100ns,  // Pre-reset delay before asserting reset
-    parameter realtime RST_DURATION = 100ns,  // Duration reset is held active
-    parameter realtime RST_POST_DURATION = 100ns,  // Post-reset stabilization duration
-    parameter bit AUTO_APPLY_RST = 1'b0,  // 1: Auto-apply reset at time 0
-    parameter realtime AUTO_APPLY_TIME    = 100ns,     // Time at which the reset should auto-apply if enabled
+    //////////////////////////////////////////////
 
+    // 1: Active-low reset; 0: Active-high
+    parameter bit RST_ACTIVE_LOW = 1'b1,
+    // 1: Starts asserted at time 0
+    parameter bit RST_START_ASSERTED = 1'b0,
+    // Pre-reset delay before asserting reset
+    parameter realtime RST_PRE_DURATION = 100ns,
+    // Duration reset is held active
+    parameter realtime RST_DURATION = 100ns,
+    // Post-reset stabilization duration
+    parameter realtime RST_POST_DURATION = 100ns,
+    // 1: Auto-apply reset at time 0
+    parameter bit AUTO_APPLY_RST = 1'b0,
+    // Time at which the reset should auto-apply if enabled
+    parameter realtime AUTO_APPLY_TIME    = 100ns,
+
+    //////////////////////////////////////////////
     // Clock parameters
-    parameter real CLK_FREQ = 100.0e6,  // Default clock frequency in Hz
-    parameter real DUTY_CYCLE = 50.0,  // Default clock duty cycle percentage
-    parameter realtime CLK_PHASE = 0ns,  // Initial clock phase / start delay
-    parameter bit CLK_START_VAL = 1'b0,  // Initial value before clock starts
-    parameter bit AUTO_START_CLK = 1'b0,  // 1: Auto-start clock at time 0
-    parameter realtime AUTO_START_TIME    = 500ns    // Time at which the clock should auto-start if enabled
+    //////////////////////////////////////////////
+
+    // Default clock frequency in Hz
+    parameter real CLK_FREQ = 100.0e6,
+    // Default clock duty cycle percentage
+    parameter real DUTY_CYCLE = 50.0,
+    // Initial clock phase / start delay
+    parameter realtime CLK_PHASE = 0ns,
+    // Initial value before clock starts
+    parameter bit CLK_START_VAL = 1'b0,
+    // 1: Auto-start clock at time 0
+    parameter bit AUTO_START_CLK = 1'b0,
+    // Time at which the clock should auto-start if enabled
+    parameter realtime AUTO_START_TIME = 500ns
 
 ) ();
 
@@ -52,11 +80,11 @@ interface adn_common_clock_reset_if #(
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
   logic arst_n;  // Active-low asynchronous reset signal
-  logic rst;  // Active-high asynchronous reset signal
+  logic arst;  // Active-high asynchronous reset signal
   logic clk;  // Generated primary clock signal
   logic clk_n;  // Inverted / complementary clock signal
 
-  assign rst   = ~arst_n;
+  assign arst  = ~arst_n;
   assign clk_n = ~clk;
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,14 +102,14 @@ interface adn_common_clock_reset_if #(
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
   // DUT modport: Connect directly to RTL design under test
-  modport dut(input clk, input clk_n, input arst_n, input rst);
+  modport dut(input clk, input clk_n, input arst_n, input arst);
 
   // Driver modport: Full access to signals and control methods for testbench drivers
   modport driver(
       output clk,
       output clk_n,
       output arst_n,
-      output rst,
+      output arst,
       input clk_cycle_count,
       input is_aligned,
       import start_clock,
@@ -109,7 +137,7 @@ interface adn_common_clock_reset_if #(
       input clk,
       input clk_n,
       input arst_n,
-      input rst,
+      input arst,
       input clk_cycle_count,
       input is_aligned
   );
