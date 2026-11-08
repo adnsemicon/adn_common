@@ -37,10 +37,8 @@ PYTHON ?= python
 # Macros
 ####################################################################################################
 
-STCR := | sed "/For covergroup Instance 'test_report' of covergroup/d"
-
-O_EW :=  $(STCR) | (grep -iE "Error|Warning" --color=auto || true)
-H_EW :=  $(STCR) | (grep -iE "Error|Warning|" --color=auto)
+O_EW :=  | (grep -iE "Error|Warning" --color=auto || true)
+H_EW :=  | (grep -iE "Error|Warning|" --color=auto)
 
 LINE_1 := This file is part of https://github.com/adnsemicon/$(REPO_FILE_EXT)
 LINE_2 := Copyright (c) $(shell date +%Y) ADN Semiconductors
@@ -176,7 +174,7 @@ compile_this_module:
 # Elaborate
 $(BUILD_DIR)/xelab_$(TOP):
 	@echo -e "\033[1;33m#\033[0m Elaborating $(TOP)"
-	@cd $(BUILD_DIR) && $(XELAB) $(TOP) -s snap_$(TOP) -debug all -log $(LOG_DIR)/xelab_$(TOP)_$(shell date +%Y%m%d_%H%M%S).log $(O_EW)
+	@cd $(BUILD_DIR) && $(XELAB) $(TOP) -s snap_$(TOP) -debug all -timescale 1ps/1ps -log $(LOG_DIR)/xelab_$(TOP)_$(shell date +%Y%m%d_%H%M%S).log $(O_EW)
 	@if [ $$? -ne 0 ]; then \
 		echo -e "\033[1;31m#\033[0m Elaboration failed, check log file $(LOG_DIR)/xelab_$(TOP)_$(shell date +%Y%m%d_%H%M%S).log"; \
 		exit 1; \
@@ -199,7 +197,6 @@ simulate:
 	@make -s $(BUILD_DIR)/XSIM_ARGS GUI=$(GUI) TN=$(TN) TC=$(TC) VCD=$(VCD) DEBUG=$(DEBUG)
 	@echo -e "\033[1;33m#\033[0m Simulating TOP:$(TOP) Test:$(TN) Count:$(TC)"
 	@cd $(BUILD_DIR) && $(XSIM) snap_$(TOP) -f $(BUILD_DIR)/XSIM_ARGS --cov_db_name ${TOP} -log $(LOG_DIR)/xsim_$(TOP)_$(TN)_$(shell date +%Y%m%d_%H%M%S).log $(H_EW)
-	@sed -i "/For covergroup Instance 'test_report' of covergroup/d" $(LOG_DIR)/xsim_$(TOP)_$(TN)_$(shell date +%Y%m%d_%H%M%S).log
 ifneq ($(VCD), 0)
 	@echo -e "\033[1;33m#\033[0m Loading VCD waveform file"
 	@gtkwave $(REPO_ROOT)/wcfg/$(TOP).gtkw || gtkwave $(BUILD_DIR)/$(TOP).vcd
