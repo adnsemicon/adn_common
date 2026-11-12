@@ -68,6 +68,7 @@ jobs:
       - name: Commit and push changes
         shell: bash
         run: |
+          source /tools/Xilinx/Vivado/2024.2/.settings64-Vivado.sh
           git config user.name "Foez Ahmed"
           git config user.email "foez.official@gmail.com"
           git add .
