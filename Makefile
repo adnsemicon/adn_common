@@ -241,6 +241,7 @@ regression:
 .PHONY: update_doc_list
 update_doc_list:
 	@make -s $(REPO_ROOT)/reuse.f
+	@make -s $(REPO_ROOT)/local.f
 	@make -s create_all_docs
 	@cat readme_base.md > readme.md
 	@echo "" >> readme.md
